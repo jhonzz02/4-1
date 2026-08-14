@@ -26,6 +26,8 @@ type Unidade = {
 type Secao = {
   id: string;
   titulo: string;
+  /** Financeiro consolidado da seção (usado quando a seção reúne várias unidades num único investimento, ex. Complexo Alphaville) */
+  financeiroConsolidado?: { nome: string; financeiro: Financeiro };
   unidades: Unidade[];
 };
 
@@ -35,16 +37,16 @@ const secoes: Secao[] = [
     titulo: "Alma Café",
     unidades: [
       {
-        nome: "Alma Café",
+        nome: "Café Alma",
         imagem: "/images/alma-cafe.jpg",
         descricao:
           "Descrição do conceito, localização e proposta de valor do Alma Café.",
         financeiro: {
-          investimento: "R$ —",
-          payback: "— meses",
-          margemEbitda: "— %",
-          valuation5: "R$ —",
-          valuation10: "R$ —",
+          investimento: "?",
+          payback: "?",
+          margemEbitda: "?",
+          valuation5: "?",
+          valuation10: "?",
         },
         kpis: [
           { valor: "R$ —", label: "Ticket Médio Est." },
@@ -65,11 +67,11 @@ const secoes: Secao[] = [
         descricao:
           "Descrição do conceito, localização e proposta de valor da Vila da Graça.",
         financeiro: {
-          investimento: "R$ —",
-          payback: "— meses",
-          margemEbitda: "— %",
-          valuation5: "R$ —",
-          valuation10: "R$ —",
+          investimento: "R$ 1,3MM",
+          payback: "29 meses",
+          margemEbitda: "29,77%",
+          valuation5: "R$ 3,4MM",
+          valuation10: "R$ 8,3MM",
         },
         kpis: [
           { valor: "R$ —", label: "Ticket Médio Est." },
@@ -90,11 +92,11 @@ const secoes: Secao[] = [
         descricao:
           "Descrição do conceito, localização e proposta de valor da Vila Ondina.",
         financeiro: {
-          investimento: "R$ —",
-          payback: "— meses",
-          margemEbitda: "— %",
-          valuation5: "R$ —",
-          valuation10: "R$ —",
+          investimento: "R$ 1,3MM",
+          payback: "29 meses",
+          margemEbitda: "29,77%",
+          valuation5: "R$ 3,4MM",
+          valuation10: "R$ 8,3MM",
         },
         kpis: [
           { valor: "R$ —", label: "Ticket Médio Est." },
@@ -115,11 +117,11 @@ const secoes: Secao[] = [
         descricao:
           "Descrição do conceito, localização e proposta de valor da Vila Pituba.",
         financeiro: {
-          investimento: "R$ —",
-          payback: "— meses",
-          margemEbitda: "— %",
-          valuation5: "R$ —",
-          valuation10: "R$ —",
+          investimento: "R$ 3MM",
+          payback: "26 meses",
+          margemEbitda: "26,41%",
+          valuation5: "R$ 4,7MM",
+          valuation10: "R$ 10,2MM",
         },
         kpis: [
           { valor: "R$ —", label: "Ticket Médio Est." },
@@ -133,6 +135,17 @@ const secoes: Secao[] = [
   {
     id: "complexo-alphaville",
     titulo: "Complexo Alphaville",
+    // Os dados financeiros foram fornecidos de forma consolidada para os 3 conceitos juntos
+    financeiroConsolidado: {
+      nome: "Vila Alphaville + Mediterrâneo + Japonês",
+      financeiro: {
+        investimento: "R$ 8,5MM",
+        payback: "57 meses",
+        margemEbitda: "25,56%",
+        valuation5: "R$ 10,7MM",
+        valuation10: "R$ 37,5MM",
+      },
+    },
     unidades: [
       {
         nome: "Vila Alphaville",
@@ -192,6 +205,14 @@ const secoes: Secao[] = [
     ],
   },
 ];
+
+/* Resumo executivo exibido no Hero */
+const resumoExecutivo = {
+  kicker: "Apresentação Executiva",
+  titulo: "Expansão de Unidades — Visão Geral do Projeto",
+  texto:
+    "Este material reúne o panorama consolidado dos investimentos, retorno esperado e indicadores operacionais das cinco frentes do projeto: Alma Café, Vila da Graça, Vila Ondina, Vila Pituba e o Complexo Alphaville. O objetivo é oferecer uma visão clara do potencial de cada unidade — investimento total, prazo de payback, margem EBITDA média e valuation projetado em 5 e 10 anos — para embasar a decisão de alocação de capital.",
+};
 
 /* Dados de contato do rodapé — ajuste conforme necessário */
 const contato = {
@@ -265,7 +286,13 @@ function GradeKpis({ kpis }: { kpis: Kpi[] }) {
   );
 }
 
-function BlocoUnidade({ unidade }: { unidade: Unidade }) {
+function BlocoUnidade({
+  unidade,
+  mostrarTabela = true,
+}: {
+  unidade: Unidade;
+  mostrarTabela?: boolean;
+}) {
   return (
     <div className="flex flex-col gap-10">
       {/* imagem */}
@@ -284,7 +311,9 @@ function BlocoUnidade({ unidade }: { unidade: Unidade }) {
       </p>
 
       {/* tabela-1 */}
-      <TabelaFinanceira nome={unidade.nome} financeiro={unidade.financeiro} />
+      {mostrarTabela && (
+        <TabelaFinanceira nome={unidade.nome} financeiro={unidade.financeiro} />
+      )}
 
       {/* KPIs */}
       <div className="scroll-anim fade-in-up">
@@ -319,8 +348,21 @@ function Secao({ secao }: { secao: Secao }) {
           </h2>
         </div>
 
+        {/* tabela-1 consolidada, quando a seção reúne várias unidades num único investimento */}
+        {secao.financeiroConsolidado && (
+          <div className="mb-16">
+            <TabelaFinanceira
+              nome={secao.financeiroConsolidado.nome}
+              financeiro={secao.financeiroConsolidado.financeiro}
+            />
+          </div>
+        )}
+
         {!multiplasUnidades ? (
-          <BlocoUnidade unidade={secao.unidades[0]} />
+          <BlocoUnidade
+            unidade={secao.unidades[0]}
+            mostrarTabela={!secao.financeiroConsolidado}
+          />
         ) : (
           <div className="flex flex-col gap-24">
             {secao.unidades.map((unidade) => (
@@ -331,11 +373,49 @@ function Secao({ secao }: { secao: Secao }) {
                 <h3 className="text-xl md:text-2xl font-serif text-dourado mb-8 tracking-wide">
                   {unidade.nome}
                 </h3>
-                <BlocoUnidade unidade={unidade} />
+                <BlocoUnidade
+                  unidade={unidade}
+                  mostrarTabela={!secao.financeiroConsolidado}
+                />
               </div>
             ))}
           </div>
         )}
+      </div>
+    </section>
+  );
+}
+
+function Hero() {
+  return (
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+      {/* imagem/plano de fundo — troque por uma imagem real se desejar */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-[#141210] to-black" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(191,161,96,0.08),_transparent_60%)]" />
+
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
+        <p className="scroll-anim fade-in-up text-dourado tracking-[0.3em] text-xs font-bold uppercase mb-6">
+          {resumoExecutivo.kicker}
+        </p>
+        <h1 className="scroll-anim fade-in-up text-4xl md:text-6xl lg:text-7xl font-serif text-offwhite mb-8 leading-tight">
+          {resumoExecutivo.titulo}
+        </h1>
+        <p className="scroll-anim fade-in-up text-offwhite/70 font-light leading-relaxed text-base md:text-lg max-w-2xl mb-12">
+          {resumoExecutivo.texto}
+        </p>
+
+        <a
+          href={`#${secoes[0].id}`}
+          className="scroll-anim fade-in-up inline-flex items-center gap-3 border border-dourado/40 text-dourado text-xs tracking-[0.2em] uppercase px-8 py-4 rounded-sm hover:bg-dourado/10 transition-colors"
+        >
+          Ver Unidades
+        </a>
+      </div>
+
+      {/* indicador de scroll */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-offwhite/40">
+        <span className="text-[10px] tracking-[0.3em] uppercase">Scroll</span>
+        <div className="w-px h-10 bg-gradient-to-b from-dourado/60 to-transparent" />
       </div>
     </section>
   );
@@ -412,6 +492,7 @@ export default function Home() {
   return (
     <div className="bg-black min-h-screen">
       <Header />
+      <Hero />
       <main>
         {secoes.map((secao) => (
           <Secao key={secao.id} secao={secao} />

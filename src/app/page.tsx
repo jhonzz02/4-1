@@ -88,7 +88,7 @@ const secoes: Secao[] = [
     unidades: [
       {
         nome: "Vila Ondina",
-        imagem: "/images/vila-ondina.jpg",
+        imagem: "/teste.png",
         descricao:
           "Descrição do conceito, localização e proposta de valor da Vila Ondina.",
         financeiro: {
@@ -149,7 +149,7 @@ const secoes: Secao[] = [
     unidades: [
       {
         nome: "Vila Alphaville",
-        imagem: "/images/alphaville-vila.jpg",
+        imagem: "/teste.png",
         descricao: "Descrição do conceito Vila dentro do Complexo Alphaville.",
         financeiro: {
           investimento: "R$ —",
@@ -186,7 +186,7 @@ const secoes: Secao[] = [
       },
       {
         nome: "Mediterrâneo Luxo",
-        imagem: "/images/alphaville-mediterraneo.jpg",
+        imagem: "/teste.png",
         descricao:
           "Descrição do conceito Mediterrâneo Luxo dentro do Complexo Alphaville.",
         financeiro: {

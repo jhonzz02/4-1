@@ -38,9 +38,9 @@ const secoes: Secao[] = [
     unidades: [
       {
         nome: "Café Alma",
-        imagem: "/images/alma-cafe.jpg",
+        imagem: "/alma.png",
         descricao:
-          "Descrição do conceito, localização e proposta de valor do Alma Café.",
+          "Conceito - O ALMA é uma cafeteria premium inspirada nos charmosos cafés europeus, oferecendo uma experiência completa do café da manhã ao jantar. O cardápio reúne cafés especiais, brunch, confeitaria artesanal, almoços leves e, à noite, uma seleção sofisticada de burratas, bruschettas, pizzettas artesanais, tábuas, fondue, vinhos e drinks autorais. Em um ambiente elegante e acolhedor, unimos a excelência da gastronomia europeia aos sabores e à hospitalidade da Bahia, criando um novo destino gastronômico no coração do Pelourinho.",
         financeiro: {
           investimento: "?",
           payback: "?",
@@ -49,10 +49,10 @@ const secoes: Secao[] = [
           valuation10: "?",
         },
         kpis: [
-          { valor: "R$ —", label: "Ticket Médio Est." },
-          { valor: "—", label: "Clientes / Dia" },
-          { valor: "— %", label: "CMV Target" },
-          { valor: "—", label: "Payback (Meses)" },
+          { valor: "R$ 67,14", label: "Ticket Médio Est." },
+          { valor: "44", label: "Clientes / Dia" },
+          { valor: "28-32 %", label: "CMV Target" },
+          { valor: "39", label: "Payback (Meses)" },
         ],
       },
     ],
@@ -63,7 +63,7 @@ const secoes: Secao[] = [
     unidades: [
       {
         nome: "Vila da Graça",
-        imagem: "/images/vila-da-graca.jpg",
+        imagem: "/teste.png",
         descricao:
           "Descrição do conceito, localização e proposta de valor da Vila da Graça.",
         financeiro: {
@@ -113,9 +113,9 @@ const secoes: Secao[] = [
     unidades: [
       {
         nome: "Vila Pituba",
-        imagem: "/images/vila-pituba.jpg",
+        imagem: "/vila-ptb.png",
         descricao:
-          "Descrição do conceito, localização e proposta de valor da Vila Pituba.",
+          "Conceito - A Vila da Graça nasceu para transformar qualquer encontro em uma experiência completa. Um espaço vibrante, descontraído e cheio de personalidade, onde a gastronomia abraça todos os gostos: espetos, açaí, pizzas, hambúrgueres, cachorro-quente e muito mais. Para acompanhar, bebidas geladas e chopp sempre no clima. É aquele lugar para chegar sem pressa, reunir os amigos, comer bem, brindar e deixar a noite acontecer.",
         financeiro: {
           investimento: "R$ 3MM",
           payback: "26 meses",
@@ -167,7 +167,7 @@ const secoes: Secao[] = [
       },
       {
         nome: "Japonês Luxo",
-        imagem: "/images/alphaville-japones.jpg",
+        imagem: "/boteko.png",
         descricao:
           "Descrição do conceito Japonês Luxo dentro do Complexo Alphaville.",
         financeiro: {
@@ -209,9 +209,10 @@ const secoes: Secao[] = [
 
 /* Resumo executivo exibido no Hero */
 const resumoExecutivo = {
-  kicker: "Apresentação Executiva - VILA DA GRAÇA",
+  kicker: "Apresentação Executiva",
+  VDG: "VILA DA GRAÇA",
   titulo:
-    "Uma Marca, Novos Endereços, Operações atuais e oportunidades de investimento",
+    "Vila Da Graça - Uma Marca, Novos Endereços, Operações atuais e oportunidades de investimento",
   texto:
     "Este material apresenta uma visão consolidada das operações atuais e das novas unidades projetadas: Alma Café, Vila da Graça, Vila Ondina, Vila Pituba e Complexo Alphaville. Para cada frente, são detalhados o investimento necessário, as projeções financeiras e os principais indicadores de desempenho, incluindo faturamento, rentabilidade, margem EBITDA, prazo de payback e valuation estimado em 5 e 10 anos. O objetivo é oferecer aos investidores informações claras e consistentes para a análise das oportunidades e a tomada de decisão sobre a alocação de capital.",
 };
@@ -298,24 +299,30 @@ function BlocoUnidade({
   return (
     <div className="flex flex-col gap-10">
       {/* imagem */}
-      <div className="relative w-full h-[320px] md:h-[420px] rounded-sm overflow-hidden">
+      <div className="w-full">
         <Image
           src={unidade.imagem}
           alt={unidade.nome}
-          fill
-          className="object-cover"
+          width={1200}
+          height={900}
+          className="w-full aspect-video object-cover rounded-sm"
         />
       </div>
+      {/* sessao dupla */}
+      <div className="flex w-full justify-between gap-6 max-lg:flex-col">
+        {/* descrição */}
+        <p className="text-offwhite/80 font-light text-xl leading-relaxed w-1/2 max-lg:w-full">
+          {unidade.descricao}
+        </p>
 
-      {/* descrição */}
-      <p className="text-offwhite/80 font-light leading-relaxed max-w-3xl">
-        {unidade.descricao}
-      </p>
-
-      {/* tabela-1 */}
-      {mostrarTabela && (
-        <TabelaFinanceira nome={unidade.nome} financeiro={unidade.financeiro} />
-      )}
+        {/* tabela-1 */}
+        {mostrarTabela && (
+          <TabelaFinanceira
+            nome={unidade.nome}
+            financeiro={unidade.financeiro}
+          />
+        )}
+      </div>
 
       {/* KPIs */}
       <div className="scroll-anim fade-in-up">
@@ -419,7 +426,7 @@ function Hero() {
 
 function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur bg-black/60 border-b border-dourado/10">
+    <header className="sticky top-0 z-50 w-full bg-black border-b border-dourado/10">
       <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between max-lg:justify-center">
         <Image src="/logonobg.png" alt="Logo" width={200} height={100} />
         <nav className="hidden min-lg:flex gap-8 text-xs tracking-[0.2em] uppercase text-offwhite/70">
@@ -484,7 +491,7 @@ function Footer() {
 
 export default function Home() {
   return (
-    <div className="bg-black min-h-screen">
+    <div className="bg-[#a47950] min-h-screen">
       <Header />
       <Hero />
       <main>

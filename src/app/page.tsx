@@ -168,7 +168,8 @@ const secoes: Secao[] = [
       {
         nome: "Japonês Luxo",
         imagem: "/images/alphaville-japones.jpg",
-        descricao: "Descrição do conceito Japonês Luxo dentro do Complexo Alphaville.",
+        descricao:
+          "Descrição do conceito Japonês Luxo dentro do Complexo Alphaville.",
         financeiro: {
           investimento: "R$ —",
           payback: "— meses",
@@ -208,10 +209,11 @@ const secoes: Secao[] = [
 
 /* Resumo executivo exibido no Hero */
 const resumoExecutivo = {
-  kicker: "Apresentação Executiva",
-  titulo: "Expansão de Unidades — Visão Geral do Projeto",
+  kicker: "Apresentação Executiva - VILA DA GRAÇA",
+  titulo:
+    "Uma Marca, Novos Endereços, Operações atuais e oportunidades de investimento",
   texto:
-    "Este material reúne o panorama consolidado dos investimentos, retorno esperado e indicadores operacionais das cinco frentes do projeto: Alma Café, Vila da Graça, Vila Ondina, Vila Pituba e o Complexo Alphaville. O objetivo é oferecer uma visão clara do potencial de cada unidade — investimento total, prazo de payback, margem EBITDA média e valuation projetado em 5 e 10 anos — para embasar a decisão de alocação de capital.",
+    "Este material apresenta uma visão consolidada das operações atuais e das novas unidades projetadas: Alma Café, Vila da Graça, Vila Ondina, Vila Pituba e Complexo Alphaville. Para cada frente, são detalhados o investimento necessário, as projeções financeiras e os principais indicadores de desempenho, incluindo faturamento, rentabilidade, margem EBITDA, prazo de payback e valuation estimado em 5 e 10 anos. O objetivo é oferecer aos investidores informações claras e consistentes para a análise das oportunidades e a tomada de decisão sobre a alocação de capital.",
 };
 
 /* Dados de contato do rodapé — ajuste conforme necessário */
@@ -388,34 +390,28 @@ function Secao({ secao }: { secao: Secao }) {
 
 function Hero() {
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-[calc(100vh-96px)] flex items-center justify-center overflow-hidden py-6">
       {/* imagem/plano de fundo — troque por uma imagem real se desejar */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-[#141210] to-black" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(191,161,96,0.08),_transparent_60%)]" />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center flex flex-col items-center">
-        <p className="scroll-anim fade-in-up text-dourado tracking-[0.3em] text-xs font-bold uppercase mb-6">
+      <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center gap-8">
+        <p className="scroll-anim fade-in-up text-dourado tracking-[0.3em] text-sm font-bold uppercase">
           {resumoExecutivo.kicker}
         </p>
-        <h1 className="scroll-anim fade-in-up text-4xl md:text-6xl lg:text-7xl font-serif text-offwhite mb-8 leading-tight">
+        <h1 className="scroll-anim fade-in-up text-2xl md:text-3xl lg:text-4xl font-serif text-offwhite leading-tight">
           {resumoExecutivo.titulo}
         </h1>
-        <p className="scroll-anim fade-in-up text-offwhite/70 font-light leading-relaxed text-base md:text-lg max-w-2xl mb-12">
+        <p className="scroll-anim fade-in-up text-offwhite/70 font-light leading-relaxed text-base md:text-xl max-w-2xl">
           {resumoExecutivo.texto}
         </p>
 
         <a
           href={`#${secoes[0].id}`}
-          className="scroll-anim fade-in-up inline-flex items-center gap-3 border border-dourado/40 text-dourado text-xs tracking-[0.2em] uppercase px-8 py-4 rounded-sm hover:bg-dourado/10 transition-colors"
+          className="scroll-anim fade-in-up inline-flex items-center border border-dourado/40 text-dourado text-xs tracking-[0.2em] uppercase px-8 py-4 rounded-sm hover:bg-dourado/10 transition-colors"
         >
           Ver Unidades
         </a>
-      </div>
-
-      {/* indicador de scroll */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-offwhite/40">
-        <span className="text-[10px] tracking-[0.3em] uppercase">Scroll</span>
-        <div className="w-px h-10 bg-gradient-to-b from-dourado/60 to-transparent" />
       </div>
     </section>
   );
@@ -424,11 +420,9 @@ function Hero() {
 function Header() {
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur bg-black/60 border-b border-dourado/10">
-      <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-        <span className="font-serif text-xl md:text-2xl text-offwhite tracking-wide">
-          Nome do Projeto
-        </span>
-        <nav className="hidden md:flex gap-8 text-xs tracking-[0.2em] uppercase text-offwhite/70">
+      <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between max-lg:justify-center">
+        <Image src="/logonobg.png" alt="Logo" width={200} height={100} />
+        <nav className="hidden min-lg:flex gap-8 text-xs tracking-[0.2em] uppercase text-offwhite/70">
           {secoes.map((s) => (
             <a
               key={s.id}

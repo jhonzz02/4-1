@@ -132,7 +132,7 @@ const secoes: Secao[] = [
       },
     ],
   },
-  {
+  /* {
     id: "complexo-alphaville",
     titulo: "Complexo Alphaville",
     // Os dados financeiros foram fornecidos de forma consolidada para os 3 conceitos juntos
@@ -204,7 +204,7 @@ const secoes: Secao[] = [
         ],
       },
     ],
-  },
+  }, */
 ];
 
 /* Resumo executivo exibido no Hero */
@@ -219,8 +219,8 @@ const resumoExecutivo = {
 
 /* Dados de contato do rodapé — ajuste conforme necessário */
 const contato = {
-  emails: ["contato@empresa.com.br", "financeiro@empresa.com.br"],
-  telefones: ["+55 71 90000-0000", "+55 71 90000-0001"],
+  emails: ["rodrigo@r4scapital.com", "thsilvavb@gmail.com"],
+  telefones: ["+55 71 99668-8636", "+55 71 98119-7523"],
 };
 
 /* ------------------------------------------------------------------ */
@@ -325,7 +325,7 @@ function BlocoUnidade({
       </div>
 
       {/* KPIs */}
-      <div className="scroll-anim fade-in-up">
+      <div className="scroll-anim fade-in-up text-center">
         <p className="text-dourado tracking-[0.3em] text-xs font-bold uppercase mb-4">
           Investimento &amp; Retorno
         </p>
@@ -399,8 +399,8 @@ function Hero() {
   return (
     <section className="relative w-full min-h-[calc(100vh-96px)] flex items-center justify-center overflow-hidden py-6">
       {/* imagem/plano de fundo — troque por uma imagem real se desejar */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-[#141210] to-black" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(191,161,96,0.08),_transparent_60%)]" />
+      <div className="" />
+      <div className="" />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center gap-8">
         <p className="scroll-anim fade-in-up text-dourado tracking-[0.3em] text-sm font-bold uppercase">
@@ -426,9 +426,14 @@ function Hero() {
 
 function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full bg-black border-b border-dourado/10">
+    <header className="sticky top-0 z-50 w-full bg-[#0F0B08] border-b border-dourado/10">
       <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between max-lg:justify-center">
-        <Image src="/logonobg.png" alt="Logo" width={200} height={100} />
+        <div className="text-center">
+          <h1 className="text-2xl font-serif tracking-wide">
+            VILA DA GRAÇA
+          </h1>
+          <p className="text-2xl font-serif">A SUA VILA</p>
+        </div>
         <nav className="hidden min-lg:flex gap-8 text-xs tracking-[0.2em] uppercase text-offwhite/70">
           {secoes.map((s) => (
             <a
@@ -468,7 +473,9 @@ function Footer() {
           {contato.telefones.map((tel) => (
             <a
               key={tel}
-              href={`tel:${tel.replace(/\D/g, "")}`}
+              href={`https://wa.me/55${tel.replace(/\D/g, "")}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-3 text-offwhite/80 hover:text-dourado transition-colors"
             >
               <Phone className="w-5 h-5 text-dourado" strokeWidth={1.5} />
@@ -491,7 +498,7 @@ function Footer() {
 
 export default function Home() {
   return (
-    <div className="bg-[#a47950] min-h-screen">
+    <div className="bg-[#A88B67] min-h-screen">
       <Header />
       <Hero />
       <main>

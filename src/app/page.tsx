@@ -63,9 +63,9 @@ const secoes: Secao[] = [
     unidades: [
       {
         nome: "Vila da Graça",
-        imagem: "/teste.png",
+        imagem: "/graca.jpeg",
         descricao:
-          "Descrição do conceito, localização e proposta de valor da Vila da Graça.",
+          "Um espaço que reúne diferentes sabores e experiências em um só lugar. De um lado, a gastronomia da Vila da Graça com seus clássicos e opções para todos os gostos, do outro, o Botekô, trazendo a culinária japonesa para completar a experiência. Tudo em um ambiente descontraído, perfeito para reunir os amigos, comer bem e aproveitar.",
         financeiro: {
           investimento: "R$ 1,3MM",
           payback: "29 meses",
@@ -88,9 +88,9 @@ const secoes: Secao[] = [
     unidades: [
       {
         nome: "Vila Ondina",
-        imagem: "/teste.png",
+        imagem: "/ondina.jpeg",
         descricao:
-          "Descrição do conceito, localização e proposta de valor da Vila Ondina.",
+          "Uma versão mais prática e dinâmica da experiência Vila da Graça. Um espaço compacto e descontraído, pensado para quem quer comer bem, encontrar os amigos e aproveitar sem complicação. O mesmo cardápio cheio de opções, com espetos, açaí, pizzas, hambúrgueres, cachorro-quente e bebidas geladas, agora em um formato mais rápido e acessível para o dia a dia.",
         financeiro: {
           investimento: "R$ 1,3MM",
           payback: "29 meses",

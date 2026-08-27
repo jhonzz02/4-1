@@ -310,7 +310,7 @@ function BlocoUnidade({
       {/* sessao dupla */}
       <div className="flex w-full justify-between gap-6 items-start max-lg:flex-col">
         {/* descrição */}
-        <p className="text-[#1E1C18]/80 font-light text-xl leading-relaxed flex-1 min-w-0 max-lg:w-full">
+        <p className="text-[#1E1C18]/80 font-light text-xl leading-relaxed flex-1 min-w-0 max-lg:w-full max-lg:text-center">
           {unidade.descricao}
         </p>
 
@@ -349,7 +349,7 @@ function Secao({ secao }: { secao: Secao }) {
     >
       <div className="max-w-6xl mx-auto px-6">
         {/* titulo */}
-        <div className="scroll-anim fade-in-up mb-16">
+        <div className="scroll-anim fade-in-up mb-16 max-lg:text-center">
           <p className="text-[#8C7B62] tracking-[0.3em] text-xs font-bold uppercase mb-4">
             Unidade
           </p>
@@ -380,7 +380,7 @@ function Secao({ secao }: { secao: Secao }) {
                 key={unidade.nome}
                 className="border-t border-[#8C7B62]/10 pt-16 first:border-t-0 first:pt-0"
               >
-                <h3 className="text-xl md:text-2xl font-serif text-[#8C7B62] mb-8 tracking-wide">
+                <h3 className="text-xl md:text-2xl font-serif text-[#8C7B62] mb-8 tracking-wide max-lg:text-center">
                   {unidade.nome}
                 </h3>
                 <BlocoUnidade
@@ -449,7 +449,7 @@ function Hero() {
       <div className="" />
       <div className="" />
 
-      <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center gap-8">
+      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 text-center flex flex-col items-center gap-8">
         <p className="scroll-anim fade-in-up text-[#8C7B62] tracking-[0.3em] text-sm font-bold uppercase">
           {resumoExecutivo.kicker}
         </p>

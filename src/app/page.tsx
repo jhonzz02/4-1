@@ -217,23 +217,22 @@ const resumoExecutivo = {
     "Este material apresenta um novo ciclo de investimentos em nosso portfólio de gastronomia e experiências, reunindo *quatro projetos com propostas e momentos distintos*. O plano contempla o lançamento do *ALMA Café, uma nova marca de cafeteria e gastronomia; a **reformulação da Vila da Graça e da Vila Ondina, operações já existentes; e a implantação da **nova Vila Pituba*, concebida para ampliar a presença e o potencial da marca em Salvador. Mais do que novas unidades, os projetos representam uma evolução de conceitos, espaços e modelos de operação, com foco em *crescimento, eficiência, rentabilidade e valorização dos negócios*. A apresentação consolida os investimentos previstos, projeções financeiras e principais indicadores de cada projeto, permitindo uma visão objetiva do *capital necessário, geração de resultado, payback e potencial de valorização*.",
 };
 
+/* Dados da seção Rebranding — ajuste imagem e texto conforme necessário */
+const rebranding = {
+  titulo: "E SE ESSA TRANSFORMAÇÃO FOR ALÉM DOS ESPAÇOS?",
+  imagem: "/vilajapa.jpeg",
+  descricao: "Estamos entrando em um novo ciclo. Novos ambientes, novos conceitos, novas unidades e uma nova experiência para o cliente. Esse movimento abre a oportunidade de dar um passo ainda maior, unir a força e a história da Vila da Graça à personalidade e ao potencial do Botekô em uma única marca.",
+  t2:"VILA BOTEKÔ",
+  d2:"Uma evolução que preserva a essência da Vila, do BOTECO,  mas apresenta ao mercado uma identidade mais contemporânea, marcante, mais aconchegante e preparada para crescer. A proposta é transformar dois conceitos complementares em uma única experiência, uma única comunicação e uma marca mais forte.",
+};
+
 /* Dados de contato do rodapé — ajuste conforme necessário */
 const contato = {
   emails: ["rodrigo@r4scapital.com", "thsilvavb@gmail.com"],
   telefones: ["+55 71 99668-8636", "+55 71 98119-7523"],
 };
 
-/* ------------------------------------------------------------------ */
-/*  COMPONENTES                                                        */
-/* ------------------------------------------------------------------ */
-
-function TabelaFinanceira({
-  nome,
-  financeiro,
-}: {
-  nome: string;
-  financeiro: Financeiro;
-}) {
+function TabelaFinanceira({nome, financeiro,}: {nome: string; financeiro: Financeiro;}) {
   const linhas = [
     { label: "Investimento Total", valor: financeiro.investimento },
     { label: "Payback", valor: financeiro.payback },
@@ -397,6 +396,52 @@ function Secao({ secao }: { secao: Secao }) {
   );
 }
 
+function Rebranding() {
+  return (
+    <section
+      id="rebranding"
+      className="w-full py-24 md:py-32 border-b border-dourado/10"
+    >
+      <div className="max-w-3xl mx-auto px-6 flex flex-col items-center text-center gap-10">
+        {/* titulo */}
+        <div className="scroll-anim fade-in-up">
+          <p className="text-dourado tracking-[0.3em] text-xs font-bold uppercase mb-4">
+            Nova Identidade
+          </p>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-offwhite">
+            {rebranding.titulo}
+          </h2>
+        </div>
+        {/* descrição */}
+        <p className="scroll-anim fade-in-up text-offwhite/80 font-light text-xl leading-relaxed">
+          {rebranding.descricao}
+        </p>
+
+        {/* imagem */}
+        <div className="scroll-anim fade-in-up w-full">
+          <Image
+            src={rebranding.imagem}
+            alt={rebranding.titulo}
+            width={1200}
+            height={900}
+            className="w-full aspect-video object-cover rounded-sm"
+          />
+        </div>
+        {/* titulo 2 */}
+        <div className="scroll-anim fade-in-up">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-serif text-offwhite">
+            {rebranding.t2}
+          </h2>
+        </div>
+        {/* descrição 2 */}
+        <p className="scroll-anim fade-in-up text-offwhite/80 font-light text-xl leading-relaxed">
+          {rebranding.d2}
+        </p>
+      </div>
+    </section>
+  );
+}
+
 function Hero() {
   return (
     <section className="relative w-full min-h-[calc(100vh-96px)] flex items-center justify-center overflow-hidden py-6">
@@ -505,6 +550,7 @@ export default function Home() {
         {secoes.map((secao) => (
           <Secao key={secao.id} secao={secao} />
         ))}
+        <Rebranding />
       </main>
       <Footer />
     </div>

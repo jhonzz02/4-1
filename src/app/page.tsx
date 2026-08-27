@@ -40,7 +40,7 @@ const secoes: Secao[] = [
         nome: "Café Alma",
         imagem: "/alma.png",
         descricao:
-          "Conceito - O ALMA é uma cafeteria premium inspirada nos charmosos cafés europeus, oferecendo uma experiência completa do café da manhã ao jantar. O cardápio reúne cafés especiais, brunch, confeitaria artesanal, almoços leves e, à noite, uma seleção sofisticada de burratas, bruschettas, pizzettas artesanais, tábuas, fondue, vinhos e drinks autorais. Em um ambiente elegante e acolhedor, unimos a excelência da gastronomia europeia aos sabores e à hospitalidade da Bahia, criando um novo destino gastronômico no coração do Pelourinho.",
+          "Uma nova marca criada para ocupar o espaço entre a cafeteria premium e a gastronomia casual, com operação ao longo de diferentes momentos do dia. Inspirado nos cafés europeus e conectado à identidade e hospitalidade da Bahia, o ALMA combina cafés especiais, brunch, confeitaria e refeições leves durante o dia com uma experiência mais sofisticada ao entardecer e à noite, incluindo vinhos, drinks, burratas, bruschettas, pizzetas e pratos para compartilhar. O primeiro ALMA nasce no Centro Histórico de Salvador, com a proposta de se tornar um destino tanto para moradores quanto para turistas, unindo gastronomia, arquitetura, experiência e localização em uma marca com potencial de expansão.",
         financeiro: {
           investimento: "?",
           payback: "?",
@@ -65,7 +65,7 @@ const secoes: Secao[] = [
         nome: "Vila da Graça",
         imagem: "/graca.jpeg",
         descricao:
-          "Um espaço que reúne diferentes sabores e experiências em um só lugar. De um lado, a gastronomia da Vila da Graça com seus clássicos e opções para todos os gostos, do outro, o Botekô, trazendo a culinária japonesa para completar a experiência. Tudo em um ambiente descontraído, perfeito para reunir os amigos, comer bem e aproveitar.",
+          "A evolução da unidade que deu origem à marca.O projeto de renovação da Vila da Graça moderniza o espaço, fortalece a experiência do cliente e incorpora novos elementos gastronômicos, entre eles o Botekô, conceito BAR japonês integrado à Vila. A proposta preserva a identidade construída pela marca, ao mesmo tempo em que renova ambiente, produtos e experiência, criando novas ocasiões de consumo e ampliando o potencial de faturamento da unidade.",
         financeiro: {
           investimento: "R$ 1,3MM",
           payback: "29 meses",
@@ -90,7 +90,7 @@ const secoes: Secao[] = [
         nome: "Vila Ondina",
         imagem: "/ondina.jpeg",
         descricao:
-          "Uma versão mais prática e dinâmica da experiência Vila da Graça. Um espaço compacto e descontraído, pensado para quem quer comer bem, encontrar os amigos e aproveitar sem complicação. O mesmo cardápio cheio de opções, com espetos, açaí, pizzas, hambúrgueres, cachorro-quente e bebidas geladas, agora em um formato mais rápido e acessível para o dia a dia.",
+          "Uma operação consolidada que entra em uma nova fase. A reformulação da Vila Ondina busca atualizar o espaço, fortalecer sua identidade e tornar a operação mais eficiente, atrativa e competitiva. O projeto mantém a proposta democrática da Vila, gastronomia variada, ambiente descontraído e preços acessíveis, enquanto promove uma renovação da experiência e um melhor aproveitamento do potencial comercial da localização.",
         financeiro: {
           investimento: "R$ 1,3MM",
           payback: "29 meses",
@@ -115,7 +115,7 @@ const secoes: Secao[] = [
         nome: "Vila Pituba",
         imagem: "/vila-ptb.png",
         descricao:
-          "Conceito - A Vila da Graça nasceu para transformar qualquer encontro em uma experiência completa. Um espaço vibrante, descontraído e cheio de personalidade, onde a gastronomia abraça todos os gostos: espetos, açaí, pizzas, hambúrgueres, cachorro-quente e muito mais. Para acompanhar, bebidas geladas e chopp sempre no clima. É aquele lugar para chegar sem pressa, reunir os amigos, comer bem, brindar e deixar a noite acontecer.",
+          "Uma nova Vila. Duas experiências em um só destino. A Vila Pituba nasce como uma operação maior e mais completa, reunindo em um mesmo espaço a Vila da Graça e o Botekô, nosso conceito de boteco japonês, com identidade e experiência próprias. O projeto combina a gastronomia diversificada e o ambiente descontraído da Vila com a proposta contemporânea do Botekô, ampliando as opções de consumo e criando diferentes experiências para o cliente dentro de um único destino. Com estrutura planejada desde a origem, maior capacidade e espaços de convivência, a unidade foi concebida para potencializar fluxo, permanência, consumo e geração de receita. A Pituba representa um novo modelo de operação: duas propostas gastronômicas complementares, integradas em um projeto com maior potencial de atração e resultado.",
         financeiro: {
           investimento: "R$ 3MM",
           payback: "26 meses",
@@ -212,9 +212,9 @@ const resumoExecutivo = {
   kicker: "Apresentação Executiva",
   VDG: "VILA DA GRAÇA",
   titulo:
-    "Vila Da Graça - Uma Marca, Novos Endereços, Operações atuais e oportunidades de investimento",
+    "NOVO CICLO | GASTRONOMIA & EXPERIÊNCIAS ALMA Café • Vila da Graça • Vila Ondina • Vila Pituba",
   texto:
-    "Este material apresenta uma visão consolidada das operações atuais e das novas unidades projetadas: Alma Café, Vila da Graça, Vila Ondina, Vila Pituba e Complexo Alphaville. Para cada frente, são detalhados o investimento necessário, as projeções financeiras e os principais indicadores de desempenho, incluindo faturamento, rentabilidade, margem EBITDA, prazo de payback e valuation estimado em 5 e 10 anos. O objetivo é oferecer aos investidores informações claras e consistentes para a análise das oportunidades e a tomada de decisão sobre a alocação de capital.",
+    "Este material apresenta um novo ciclo de investimentos em nosso portfólio de gastronomia e experiências, reunindo *quatro projetos com propostas e momentos distintos*. O plano contempla o lançamento do *ALMA Café, uma nova marca de cafeteria e gastronomia; a **reformulação da Vila da Graça e da Vila Ondina, operações já existentes; e a implantação da **nova Vila Pituba*, concebida para ampliar a presença e o potencial da marca em Salvador. Mais do que novas unidades, os projetos representam uma evolução de conceitos, espaços e modelos de operação, com foco em *crescimento, eficiência, rentabilidade e valorização dos negócios*. A apresentação consolida os investimentos previstos, projeções financeiras e principais indicadores de cada projeto, permitindo uma visão objetiva do *capital necessário, geração de resultado, payback e potencial de valorização*.",
 };
 
 /* Dados de contato do rodapé — ajuste conforme necessário */

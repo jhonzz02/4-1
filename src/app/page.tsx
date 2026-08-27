@@ -309,18 +309,20 @@ function BlocoUnidade({
         />
       </div>
       {/* sessao dupla */}
-      <div className="flex w-full justify-between gap-6 max-lg:flex-col">
+      <div className="flex w-full justify-between gap-6 items-start max-lg:flex-col">
         {/* descrição */}
-        <p className="text-offwhite/80 font-light text-xl leading-relaxed w-1/2 max-lg:w-full">
+        <p className="text-offwhite/80 font-light text-xl leading-relaxed flex-1 min-w-0 max-lg:w-full">
           {unidade.descricao}
         </p>
 
         {/* tabela-1 */}
         {mostrarTabela && (
-          <TabelaFinanceira
-            nome={unidade.nome}
-            financeiro={unidade.financeiro}
-          />
+          <div className="w-full max-w-md shrink-0 max-lg:max-w-full">
+            <TabelaFinanceira
+              nome={unidade.nome}
+              financeiro={unidade.financeiro}
+            />
+          </div>
         )}
       </div>
 
@@ -429,9 +431,7 @@ function Header() {
     <header className="sticky top-0 z-50 w-full bg-[#0F0B08] border-b border-dourado/10">
       <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between max-lg:justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-serif tracking-wide">
-            VILA DA GRAÇA
-          </h1>
+          <h1 className="text-2xl font-serif tracking-wide">VILA DA GRAÇA</h1>
           <p className="text-2xl font-serif">A SUA VILA</p>
         </div>
         <nav className="hidden min-lg:flex gap-8 text-xs tracking-[0.2em] uppercase text-offwhite/70">

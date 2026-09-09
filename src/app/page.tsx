@@ -7,10 +7,9 @@ import { Mail, Phone } from "lucide-react";
 
 type Financeiro = {
   investimento: string;
-  payback: string;
   margemEbitda: string;
   valuation5: string;
-  valuation10: string;
+  valuation10?: string;
 };
 
 type Kpi = { valor: string; label: string };
@@ -42,11 +41,9 @@ const secoes: Secao[] = [
         descricao:
           "Uma nova marca criada para ocupar o espaço entre a cafeteria premium e a gastronomia casual, com operação ao longo de diferentes momentos do dia. Inspirado nos cafés europeus e conectado à identidade e hospitalidade da Bahia, o ALMA combina cafés especiais, brunch, confeitaria e refeições leves durante o dia com uma experiência mais sofisticada ao entardecer e à noite, incluindo vinhos, drinks, burratas, bruschettas, pizzetas e pratos para compartilhar. O primeiro ALMA nasce no Centro Histórico de Salvador, com a proposta de se tornar um destino tanto para moradores quanto para turistas, unindo gastronomia, arquitetura, experiência e localização em uma marca com potencial de expansão.",
         financeiro: {
-          investimento: "?",
-          payback: "?",
-          margemEbitda: "?",
-          valuation5: "?",
-          valuation10: "?",
+          investimento: "R$ 860 mil",
+          margemEbitda: "26%",
+          valuation5: "R$ 2,5M",
         },
         kpis: [
           { valor: "R$ 67,14", label: "Ticket Médio Est." },
@@ -67,42 +64,16 @@ const secoes: Secao[] = [
         descricao:
           "A evolução da unidade que deu origem à marca.O projeto de renovação da Vila da Graça moderniza o espaço, fortalece a experiência do cliente e incorpora novos elementos gastronômicos, entre eles o Botekô, conceito BAR japonês integrado à Vila. A proposta preserva a identidade construída pela marca, ao mesmo tempo em que renova ambiente, produtos e experiência, criando novas ocasiões de consumo e ampliando o potencial de faturamento da unidade.",
         financeiro: {
-          investimento: "R$ 1,3MM",
-          payback: "29 meses",
-          margemEbitda: "29,77%",
-          valuation5: "R$ 3,4MM",
-          valuation10: "R$ 8,3MM",
+          investimento: "R$ 1,310M",
+          margemEbitda: "24%",
+          valuation5: "R$ 2,4M",
+          valuation10: "R$ 5,6M",
         },
         kpis: [
-          { valor: "R$ —", label: "Ticket Médio Est." },
-          { valor: "—", label: "Clientes / Dia" },
-          { valor: "— %", label: "CMV Target" },
-          { valor: "—", label: "Payback (Meses)" },
-        ],
-      },
-    ],
-  },
-  {
-    id: "vila-ondina",
-    titulo: "Vila Ondina",
-    unidades: [
-      {
-        nome: "Vila Ondina",
-        imagem: "/ondina.jpeg",
-        descricao:
-          "Uma operação consolidada que entra em uma nova fase. A reformulação da Vila Ondina busca atualizar o espaço, fortalecer sua identidade e tornar a operação mais eficiente, atrativa e competitiva. O projeto mantém a proposta democrática da Vila, gastronomia variada, ambiente descontraído e preços acessíveis, enquanto promove uma renovação da experiência e um melhor aproveitamento do potencial comercial da localização.",
-        financeiro: {
-          investimento: "R$ 1,3MM",
-          payback: "29 meses",
-          margemEbitda: "29,77%",
-          valuation5: "R$ 3,4MM",
-          valuation10: "R$ 8,3MM",
-        },
-        kpis: [
-          { valor: "R$ —", label: "Ticket Médio Est." },
-          { valor: "—", label: "Clientes / Dia" },
-          { valor: "— %", label: "CMV Target" },
-          { valor: "—", label: "Payback (Meses)" },
+          { valor: "R$ 147", label: "Ticket Médio Est." },
+          { valor: "243", label: "Clientes / Dia" },
+          { valor: "30%", label: "CMV Target" },
+          { valor: "34", label: "Payback (Meses)" },
         ],
       },
     ],
@@ -113,21 +84,20 @@ const secoes: Secao[] = [
     unidades: [
       {
         nome: "Vila Pituba",
-        imagem: "/vila-ptb.png",
+        imagem: "/vilaptb2.jpeg",
         descricao:
           "Uma nova Vila. Duas experiências em um só destino. A Vila Pituba nasce como uma operação maior e mais completa, reunindo em um mesmo espaço a Vila da Graça e o Botekô, nosso conceito de boteco japonês, com identidade e experiência próprias. O projeto combina a gastronomia diversificada e o ambiente descontraído da Vila com a proposta contemporânea do Botekô, ampliando as opções de consumo e criando diferentes experiências para o cliente dentro de um único destino. Com estrutura planejada desde a origem, maior capacidade e espaços de convivência, a unidade foi concebida para potencializar fluxo, permanência, consumo e geração de receita. A Pituba representa um novo modelo de operação: duas propostas gastronômicas complementares, integradas em um projeto com maior potencial de atração e resultado.",
         financeiro: {
-          investimento: "R$ 3MM",
-          payback: "26 meses",
-          margemEbitda: "26,41%",
-          valuation5: "R$ 4,7MM",
-          valuation10: "R$ 10,2MM",
+          investimento: "R$ 3M",
+          margemEbitda: "28%",
+          valuation5: "R$ 3,3M",
+          valuation10: "R$ 8M",
         },
         kpis: [
-          { valor: "R$ —", label: "Ticket Médio Est." },
-          { valor: "—", label: "Clientes / Dia" },
-          { valor: "— %", label: "CMV Target" },
-          { valor: "—", label: "Payback (Meses)" },
+          { valor: "R$ 147", label: "Ticket Médio Est." },
+          { valor: "264", label: "Clientes / Dia" },
+          { valor: "30%", label: "CMV Target" },
+          { valor: "51", label: "Payback (Meses)" },
         ],
       },
     ],
@@ -140,7 +110,6 @@ const secoes: Secao[] = [
       nome: "Vila Alphaville + Mediterrâneo + Japonês",
       financeiro: {
         investimento: "R$ 8,5MM",
-        payback: "57 meses",
         margemEbitda: "25,56%",
         valuation5: "R$ 10,7MM",
         valuation10: "R$ 37,5MM",
@@ -153,7 +122,6 @@ const secoes: Secao[] = [
         descricao: "Descrição do conceito Vila dentro do Complexo Alphaville.",
         financeiro: {
           investimento: "R$ —",
-          payback: "— meses",
           margemEbitda: "— %",
           valuation5: "R$ —",
           valuation10: "R$ —",
@@ -172,7 +140,6 @@ const secoes: Secao[] = [
           "Descrição do conceito Japonês Luxo dentro do Complexo Alphaville.",
         financeiro: {
           investimento: "R$ —",
-          payback: "— meses",
           margemEbitda: "— %",
           valuation5: "R$ —",
           valuation10: "R$ —",
@@ -191,7 +158,6 @@ const secoes: Secao[] = [
           "Descrição do conceito Mediterrâneo Luxo dentro do Complexo Alphaville.",
         financeiro: {
           investimento: "R$ —",
-          payback: "— meses",
           margemEbitda: "— %",
           valuation5: "R$ —",
           valuation10: "R$ —",
@@ -235,10 +201,11 @@ const contato = {
 function TabelaFinanceira({nome, financeiro,}: {nome: string; financeiro: Financeiro;}) {
   const linhas = [
     { label: "Investimento Total", valor: financeiro.investimento },
-    { label: "Payback", valor: financeiro.payback },
     { label: "Média Margem EBITDA", valor: financeiro.margemEbitda },
     { label: "Valuation post money (5 anos)", valor: financeiro.valuation5 },
-    { label: "Valuation post money (10 anos)", valor: financeiro.valuation10 },
+    ...(financeiro.valuation10
+      ? [{ label: "Valuation post money (10 anos)", valor: financeiro.valuation10 }]
+      : []),
   ];
 
   return (
@@ -550,7 +517,6 @@ export default function Home() {
         {secoes.map((secao) => (
           <Secao key={secao.id} secao={secao} />
         ))}
-        <Rebranding />
       </main>
       <Footer />
     </div>

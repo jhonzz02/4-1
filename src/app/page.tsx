@@ -178,9 +178,9 @@ const resumoExecutivo = {
   kicker: "Apresentação Executiva",
   VDG: "VILA DA GRAÇA",
   titulo:
-    "NOVO CICLO | GASTRONOMIA & EXPERIÊNCIAS ALMA Café • Vila da Graça • Vila Ondina • Vila Pituba",
+    "NOVO CICLO | GASTRONOMIA & EXPERIÊNCIAS ALMA Café • Vila da Graça • Vila Pituba",
   texto:
-    "Este material apresenta um novo ciclo de investimentos em nosso portfólio de gastronomia e experiências, reunindo quatro projetos com propostas e momentos distintos. O plano contempla o lançamento do ALMA Café, uma nova marca de cafeteria e gastronomia, a reformulação da Vila da Graça e da Vila Ondina, operações já existentes; e a implantação da nova Vila Pituba, concebida para ampliar a presença e o potencial da marca em Salvador. Mais do que novas unidades, os projetos representam uma evolução de conceitos, espaços e modelos de operação, com foco em crescimento, eficiência, rentabilidade e valorização dos negócios. A apresentação consolida os investimentos previstos, projeções financeiras e principais indicadores de cada projeto, permitindo uma visão objetiva do capital necessário, geração de resultado, payback e potencial de valorização.",
+    "Este material apresenta um novo ciclo de investimentos em nosso portfólio de gastronomia e experiências, reunindo quatro projetos com propostas e momentos distintos. O plano contempla o lançamento do ALMA Café, uma nova marca de cafeteria e gastronomia, a reformulação da Vila da Graça, operações já existentes; e a implantação da nova Vila Pituba, concebida para ampliar a presença e o potencial da marca em Salvador. Mais do que novas unidades, os projetos representam uma evolução de conceitos, espaços e modelos de operação, com foco em crescimento, eficiência, rentabilidade e valorização dos negócios. A apresentação consolida os investimentos previstos, projeções financeiras e principais indicadores de cada projeto, permitindo uma visão objetiva do capital necessário, geração de resultado, payback e potencial de valorização.",
 };
 
 /* Dados da seção Rebranding — ajuste imagem e texto conforme necessário */
